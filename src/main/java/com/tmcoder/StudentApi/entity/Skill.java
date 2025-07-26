@@ -2,10 +2,7 @@ package com.tmcoder.StudentApi.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Getter
 @Setter
@@ -27,4 +24,18 @@ public class Skill {
         this.skill = skill;
         this.s = s;
     }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (!(object instanceof Skill that)) return false;
+
+        return skill != null && skill.equalsIgnoreCase(that.skill);  // compare only by skill name
+    }
+
+    @Override
+    public int hashCode() {
+        return skill != null ? skill.toLowerCase().hashCode() : 0;
+    }
+
 }
