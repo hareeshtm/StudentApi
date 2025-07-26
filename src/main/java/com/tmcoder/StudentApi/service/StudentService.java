@@ -1,7 +1,7 @@
 package com.tmcoder.StudentApi.service;
 
 import com.tmcoder.StudentApi.entity.Student;
-import com.tmcoder.StudentApi.entity.StudentSkill;
+import com.tmcoder.StudentApi.entity.Skill;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ public interface StudentService {
 
     public void deleteStudent(int studentId);
 
-    public Student addSkill(int studentId , StudentSkill studentSkill);
+    public Student addSkill(int studentId , Skill studentSkill);
 
     public List<Student> findStudentsByName(String name);
 

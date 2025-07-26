@@ -3,14 +3,13 @@ package com.tmcoder.StudentApi.service.impl;
 import com.tmcoder.StudentApi.dao.SkillRepo;
 import com.tmcoder.StudentApi.dao.StudentRepo;
 import com.tmcoder.StudentApi.entity.Student;
-import com.tmcoder.StudentApi.entity.StudentSkill;
+import com.tmcoder.StudentApi.entity.Skill;
 import com.tmcoder.StudentApi.exception.StudentNotFound;
 import com.tmcoder.StudentApi.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class StudentServiceImpl implements StudentService {
@@ -45,7 +44,7 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public Student addSkill(int studentId, StudentSkill studentSkill) {
+    public Student addSkill(int studentId, Skill studentSkill) {
         studentSkill.setS(getStudent(studentId));
         skillRepo.save(studentSkill);
         return studentSkill.getS();

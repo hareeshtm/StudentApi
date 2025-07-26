@@ -13,7 +13,7 @@ import lombok.ToString;
 @ToString(exclude = "s")
 @Entity
 @Table(name = "skill")
-public class StudentSkill {
+public class Skill {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -22,7 +22,7 @@ public class StudentSkill {
     @ManyToOne(fetch = FetchType.LAZY)
     private Student s;
 
-    public StudentSkill(int id, String skill, Student s) {
+    public Skill(int id, String skill, Student s) {
         this.id = id;
         this.skill = skill;
         this.s = s;

@@ -24,9 +24,9 @@ public class Student {
     @JsonManagedReference
     @OneToMany(mappedBy = "s", cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST,
             CascadeType.REFRESH })
-    private List<StudentSkill> skills;
+    private List<Skill> skills;
 
-    public Student(int id, String name, String dob, List<StudentSkill> skills) {
+    public Student(int id, String name, String dob, List<Skill> skills) {
         this.id = id;
         this.name = name;
         this.dob = dob;

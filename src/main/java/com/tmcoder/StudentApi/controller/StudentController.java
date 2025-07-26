@@ -1,7 +1,7 @@
 package com.tmcoder.StudentApi.controller;
 
 import com.tmcoder.StudentApi.entity.Student;
-import com.tmcoder.StudentApi.entity.StudentSkill;
+import com.tmcoder.StudentApi.entity.Skill;
 import com.tmcoder.StudentApi.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -42,7 +42,7 @@ public class StudentController {
         return "Deleted Student :"+ studentId;
     }
 
-    public Student addSkill(@PathVariable int studentId, @RequestBody StudentSkill studentSkill) {
+    public Student addSkill(@PathVariable int studentId, @RequestBody Skill studentSkill) {
         return service.addSkill(studentId, studentSkill);
     }
 
